@@ -27,8 +27,6 @@ set viewoptions+=slash,unix " Better Unix/Windows compatibility
 set fileformats=unix,mac,dos " Auto detect the file formats
 
 " {{{ behavior
-
-" {{{
 syntax on
 filetype on
 filetype plugin on
@@ -42,6 +40,7 @@ set complete=.,w,b,k,t,i
 set completeopt=longest,menu " 只在下拉菜单中显示匹配项目，并且会自动插入所有匹配项目的相同文本
 set completeopt+=longest " Optimize auto complete
 set completeopt-=preview " Optimize auto complete
+set omnifunc=syntaxcomplete#Complete
 
 set modeline " Turn on modeline
 
@@ -49,10 +48,7 @@ set modeline " Turn on modeline
 set mousehide " Hide mouse after chars typed
 set mouse=a " Mouse in all modes
 
-
 set ve=block
-
-set omnifunc=syntaxcomplete#Complete
 
 " {{{ indentation options and tab converting
 " Note: smartindent is seriously outdated. cindent, even, is unnecessary.
@@ -94,7 +90,7 @@ set iskeyword+=_,$,@,%,#,-
 " o: insert comment leader after o or O
 set formatoptions+=rnlj
 set formatoptions-=t
-set textwidth=78
+set textwidth=80
 
 
 " context while scrolling
@@ -139,7 +135,7 @@ end
 " don't duplicate an existing open buffer
 set switchbuf=useopen
 
-" }}}"}}}
+" }}}
 
 " =============================================================
 " User Interface
