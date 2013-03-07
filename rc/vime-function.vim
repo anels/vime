@@ -36,7 +36,6 @@ function! RemoveOldViewFiles ()
 endfunction
 nmap <silent><leader>rvo :call RemoveOldViewFiles()<cr>
 
-
 function! RemoveAllViewFiles ()
    exec '!find '.$VIMFILES.'/view/* -exec rm {} \;'
 endfunction

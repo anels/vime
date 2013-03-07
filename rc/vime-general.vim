@@ -316,13 +316,11 @@ augroup ft_quickfix
     autocmd Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap textwidth=0
 augroup END
 
-
 " LESS
 augroup ft_less
     autocmd!
     autocmd filetype less nnoremap <buffer> <Leader>r :w <BAR> !lessc % > %:t:r.css<CR><Space>
 augroup END
-
 
 " Python
 augroup ft_python

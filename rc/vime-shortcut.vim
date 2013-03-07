@@ -51,7 +51,7 @@ vnoremap <Space> zf
 vnoremap * :<C-U>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-U>call <SID>VSetSearch()<CR>??<CR>
 
-" 按下 Q 不进入 Ex 模式，而是退出
+" Quit current window by pressing Q
 nmap Q :x<cr>
 
 "Use spacebar toggle fold
@@ -81,7 +81,6 @@ nnoremap J mzJ`z
 nnoremap g; g;zz
 nnoremap g, g,zz
 
-
 " keep visual block highlighted when indenting
 vnoremap >> >gv
 vnoremap << <gv
@@ -89,7 +88,6 @@ vnoremap << <gv
 " Repeat last substitution, including flags, with &.
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
-
 
 " Use Tab insteadof % to switch among brackets/parenthesis
 nnoremap <Tab> %

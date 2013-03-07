@@ -1,4 +1,3 @@
-
 autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us formatoptions=trocqj
 " format options
 " t: autowrap text using textwidth

@@ -86,7 +86,7 @@ Most of the customization files are in <code>rc</code>
 #### Coding
 * [a.vim](http://www.vim.org/scripts/script.php?script_id=31) Fast switch between .h .cpp
   * shortkey <code>：A</code>
-* [Syntastic](https://github.com/scrooloose/syntastic) - Syntax check that runs files through external syntax checkers 
+* [Syntastic](https://github.com/scrooloose/syntastic) - Syntax check that runs files through external syntax checkers
   * <code>&lt;Leader&gt;se</code> Show detected erros.
 * [NERD_commenter](https://github.com/scrooloose/nerdcommenter) - Provide many different commenting operations and styles
 * [Indent Guides](https://github.com/mutewinter/vim-indent-guides) - Display vertical lines to visualize levels
@@ -140,10 +140,10 @@ Most of the vime customized shortkeys are defined in <code>$HOME/.vim/rc/vime-sh
 
 #### Normal Mode
 * Tab switch:
-  * New Tab: <code>&lt;Ctrl&gt;-&lt;t&gt;</code>
-  * Close Tab: <code>&lt;Ctrl&gt;-&lt;w&gt;</code>
-  * Next Tab: <code>&lt;Ctrl&gt;-&lt;Tab&gt;</code>
-  * Previous Tab: <code>&lt;Ctrl&gt;-&lt;Shift&gt;-&lt;Tab&gt;</code>
+  * `<Ctrl>-t`             : New Tab
+  * `<Ctrl>-w`             : Close Tab
+  * `<Ctrl>-<Tab>`         : Next Tab
+  * `<Ctrl>-<Shift>-<Tab>` : Previous Tab
 * Splitted Windows
   * Horizental splitted Windows (:sp)
     * ­`<Alt>+`      : Enlarge current window
@@ -161,10 +161,3 @@ Most of the vime customized shortkeys are defined in <code>$HOME/.vim/rc/vime-sh
 * Plugins
   * `<F10>`:  toggle Tagbar.
   * `<Leader>ec`: Open ColorSchemeExplorer
-
-##Credit
-vime refers to some other customized Vim distributioins or .vimrcs. I'd like
-to thank:
-* [Xiao-ou Zhang's ivim](https://github.com/kepbod/ivim), you are the one who
-  inspiring me to start vime project.
-* [carlhuda/janus](https://github.com/carlhuda/janus)
