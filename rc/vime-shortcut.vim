@@ -54,7 +54,7 @@ vnoremap # :<C-U>call <SID>VSetSearch()<CR>??<CR>
 " Quit current window by pressing Q
 nmap Q :x<cr>
 
-"Use spacebar toggle fold
+" Use spacebar toggle fold
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 选中一段文字并全文搜索这段文字
