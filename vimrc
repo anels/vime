@@ -5,7 +5,7 @@
 "         Author: Anels<anelsliu@gmail.com>
 "        Website: http://ruilinliu.com/
 "          Since: 2012-01-27
-"  Last Modified: 2013-03-05 02:09:53 AM
+"  Last Modified: 2013-11-20 12:59:29 PM
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -93,7 +93,8 @@ source $VIMFILES/rc/plugin-latex-suite.vim
 source $VIMFILES/rc/plugin-neocomplcache.vim
 source $VIMFILES/rc/plugin-nerdcommenter.vim
 source $VIMFILES/rc/plugin-nerdtree.vim
-source $VIMFILES/rc/plugin-powerline.vim
+" source $VIMFILES/rc/plugin-powerline.vim
+source $VIMFILES/rc/plugin-airline.vim
 source $VIMFILES/rc/plugin-rainbow-parentheses.vim
 source $VIMFILES/rc/plugin-syntastic.vim
 source $VIMFILES/rc/plugin-tagbar.vim

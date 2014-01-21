@@ -21,10 +21,11 @@ Bundle 'jdevera/vim-cs-explorer'
 " }}}
 
 " {{{ UI Related
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'bling/vim-airline'
 " }}}
 
 " {{{ Auto Complete and Snippets
@@ -58,7 +59,7 @@ Bundle 'tpope/vim-fugitive'
 
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
-  Bundle 'xolox/vim-easytags'
+  " Bundle 'xolox/vim-easytags'
 endif
 
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
