@@ -51,7 +51,6 @@ Bundle 'a.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'kien/ctrlp.vim'
 " Bundle 'vimwiki'
-" Bundle 'xolox/vim-notes'
 Bundle 'LanguageTool'
 
 Bundle 'tpope/vim-fugitive'
@@ -69,3 +68,23 @@ Bundle 'tpope/vim-markdown'
 Bundle 'anels/vim-foldline'
 
 " Bundle 'xuhdev/SingleCompile'
+
+" {{{ Plugin Configuration
+source $VIMFILES/rc/plugin-ctrlp.vim
+source $VIMFILES/rc/plugin-fugitive.vim
+source $VIMFILES/rc/plugin-gundo.vim
+source $VIMFILES/rc/plugin-indentguide.vim
+source $VIMFILES/rc/plugin-languagetool.vim
+source $VIMFILES/rc/plugin-latex-suite.vim
+source $VIMFILES/rc/plugin-neocomplcache.vim
+source $VIMFILES/rc/plugin-nerdcommenter.vim
+source $VIMFILES/rc/plugin-nerdtree.vim
+source $VIMFILES/rc/plugin-airline.vim
+source $VIMFILES/rc/plugin-rainbow-parentheses.vim
+source $VIMFILES/rc/plugin-syntastic.vim
+source $VIMFILES/rc/plugin-tagbar.vim
+source $VIMFILES/rc/plugin-unite.vim
+source $VIMFILES/rc/plugin-tabular.vim
+
+" source $VIMFILES/rc/plugin-vimwiki.vim
+" }}}

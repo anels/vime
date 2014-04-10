@@ -5,7 +5,7 @@
 "         Author: Anels<anelsliu@gmail.com>
 "        Website: http://ruilinliu.com/
 "          Since: 2012-01-27
-"  Last Modified: 2014-04-10 03:35:08 PM
+"  Last Modified: 2014-04-10 04:11:03 PM
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -81,27 +81,6 @@ endif
 source $VIMFILES/rc/vime-function.vim
 source $VIMFILES/rc/vime-general.vim
 source $VIMFILES/rc/vime-shortcut.vim
-" }}}
-
-" {{{ Plugin Configuration
-source $VIMFILES/rc/plugin-ctrlp.vim
-source $VIMFILES/rc/plugin-fugitive.vim
-source $VIMFILES/rc/plugin-gundo.vim
-source $VIMFILES/rc/plugin-indentguide.vim
-source $VIMFILES/rc/plugin-languagetool.vim
-source $VIMFILES/rc/plugin-latex-suite.vim
-source $VIMFILES/rc/plugin-neocomplcache.vim
-source $VIMFILES/rc/plugin-nerdcommenter.vim
-source $VIMFILES/rc/plugin-nerdtree.vim
-source $VIMFILES/rc/plugin-airline.vim
-source $VIMFILES/rc/plugin-rainbow-parentheses.vim
-source $VIMFILES/rc/plugin-syntastic.vim
-source $VIMFILES/rc/plugin-tagbar.vim
-source $VIMFILES/rc/plugin-unite.vim
-source $VIMFILES/rc/plugin-tabular.vim
-
-" source $VIMFILES/rc/plugin-vimnotes.vim
-" source $VIMFILES/rc/plugin-vimwiki.vim
 " }}}
 
 autocmd BufNewFile,BufRead *.tex source $VIMFILES/rc/filetype-tex.vim
