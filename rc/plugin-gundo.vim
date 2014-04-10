@@ -2,7 +2,7 @@
 " Plug-in: Gundo
 " =============================================================
 " Visualize vim undo tree
-" Homepage > 
+" Homepage >
 " github   > https://github.com/sjl/gundo.vim
 " Document > :help gundo
 " =============================================================

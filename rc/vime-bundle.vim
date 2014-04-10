@@ -21,8 +21,7 @@ Bundle 'jdevera/vim-cs-explorer'
 " }}}
 
 " {{{ UI Related
-" Bundle 'Lokaltog/vim-powerline'
-Bundle 'mutewinter/vim-indent-guides'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'bling/vim-airline'
@@ -56,6 +55,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'LanguageTool'
 
 Bundle 'tpope/vim-fugitive'
+
+Bundle "Chiel92/vim-autoformat"
 
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
