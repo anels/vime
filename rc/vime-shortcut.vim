@@ -65,6 +65,9 @@ vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 map <f3> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
 nmap b :<C-U>call BufPos_ActivateBuffer(v:count)<CR>
 
+noremap <F3> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
+
+map <F4> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
 
 " Make j and k work the way you expect
 nnoremap j gj
@@ -98,5 +101,5 @@ nnoremap <Leader>q :%s/\s\+$//<CR>:let @/=''<CR>
 
 " See the differences between the current buffer and the file it was loaded from
 command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
-    \ | diffthis | wincmd p | diffthis
+            \ | diffthis | wincmd p | diffthis
 

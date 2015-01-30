@@ -88,8 +88,8 @@ set iskeyword+=_,$,@,%,#,-
 " c: autowrap comments using textwidth, inserting leader
 " r: insert comment leader after <CR>
 " o: insert comment leader after o or O
-set formatoptions+=rnlj
-set formatoptions-=t
+set formatoptions+=trnlj
+" set formatoptions-=t
 set textwidth=80
 
 
@@ -153,7 +153,7 @@ if has('gui_running')
   "set guioptions+=r          " 显示gui右边滚动条
   set guioptions-=T           " 隐藏工具栏
   " set guioptions-=m         " 隐藏菜单栏
-  " set guioptions-=r         " 删除右边的滚动条
+  set guioptions-=r         " 删除右边的滚动条
   set guioptions-=R           " 如有垂直分割的窗口，删除右边的滚动条
   " set guioptions-=l         " 删除左边的滚动条
   set guioptions-=L           " 如有垂直分割的窗口，删除左边的滚动条
