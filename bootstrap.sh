@@ -68,9 +68,9 @@ echo "Copying $vimedir/pre/vimrc_local.vim to $vimrc.local"
 cp $vimedir/pre/vimrc-local.vim $vimrc.local
 
 e_info "3. Installing Vundle..."
-git clone git://github.com/gmarik/vundle.git $vimdir/bundle/vundle
+git clone https://github.com/gmarik/Vundle.vim.git $vimdir/bundle/Vundle.vim
 
 e_info "4. Installing plugins using Vundle..."
-vim -u $vimedir/pre/vimrc-update.vim +mapclear +BundleInstall!  +BundleClean! +qa! $vimedir/vime.txt
+vim -u $vimedir/pre/vimrc-update.vim +mapclear +PluginInstall! +PluginClean! +qall! $vimedir/vime.txt
 
 e_title "vime has been successfully installed. Let's vimming!"

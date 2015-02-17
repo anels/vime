@@ -14,63 +14,63 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 " {{{ Colorschemes
-Bundle 'gmarik/ingretu'
-Bundle 'molokai'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'jdevera/vim-cs-explorer'
+Plugin 'gmarik/ingretu'
+Plugin 'molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'jdevera/vim-cs-explorer'
 " }}}
 
 " {{{ UI Related
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'bling/vim-airline'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'bling/vim-airline'
 " }}}
 
 " {{{ Auto Complete and Snippets
-Bundle 'Shougo/neocomplcache'
-Bundle 'SirVer/ultisnips'
-Bundle 'ervandew/supertab'
+Plugin 'Shougo/neocomplcache'
+Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
 " }}}
 
 " {{{ Automatic Helper
-Bundle 'scrooloose/syntastic'
-" Bundle 'Raimondi/delimitMate'
-" Bundle 'tpope/vim-surround'
-Bundle 'godlygeek/tabular'
-Bundle 'The-NERD-Commenter'
+Plugin 'scrooloose/syntastic'
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
+Plugin 'The-NERD-Commenter'
 " }}}
 
 " Navigation
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'a.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'a.vim'
 
 " Other
-Bundle 'Shougo/unite.vim'
-Bundle 'kien/ctrlp.vim'
-" Bundle 'vimwiki'
-" Bundle 'LanguageTool'
+Plugin 'Shougo/unite.vim'
+Plugin 'kien/ctrlp.vim'
+" Plugin 'vimwiki'
+" Plugin 'LanguageTool'
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
-Bundle "Chiel92/vim-autoformat"
+Plugin 'Chiel92/vim-autoformat'
 
 if executable('ctags')
-  Bundle 'majutsushi/tagbar'
-  " Bundle 'xolox/vim-easytags'
+  Plugin 'majutsushi/tagbar'
+  " Plugin 'xolox/vim-easytags'
 endif
 
-Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-Bundle 'suan/vim-instant-markdown'
-Bundle 'tpope/vim-markdown'
-" Bundle 'anels/vim-foldline'
+Plugin 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'tpope/vim-markdown'
+" Plugin 'anels/vim-foldline'
 
-" Bundle 'xuhdev/SingleCompile'
+" Plugin 'xuhdev/SingleCompile'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
