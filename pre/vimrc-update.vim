@@ -20,7 +20,7 @@ endif
 " =============================================================
 " Plug-ins Management
 " =============================================================
-source $VIMFILES/rc/vime-bundle.vim
+source $VIMFILES/rc/vime-plug.vim
 
 " =============================================================
 " Colorschemes and Fonts

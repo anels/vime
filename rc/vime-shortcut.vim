@@ -1,16 +1,53 @@
-" vim: fdm=marker:
-
 " =============================================================
 " Key Mapping
 " =============================================================
-"let mapleader = ","
-let g:mapleader = ","
+
+" Line Shortcuts {{{
+nnoremap j gj
+nnoremap k gk
+nnoremap B ^
+nnoremap E $
+nnoremap $ <nop>
+nnoremap ^ <nop>
+nnoremap gV `[v`]
+onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+xnoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+ 
+onoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+xnoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+onoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+" }}}
+" Leader Shortcuts {{{
 let mapleader= ',' " Change the mapleader
-let maplocalleader='\' " Change the maplocalleader
+
+nnoremap <leader>m :silent make\|redraw!\|cw<CR>
+nnoremap <leader>w :NERDTree<CR>
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>h :A<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>l :call ToggleNumber()<CR>
+nnoremap <leader><space> :noh<CR>
+nnoremap <leader>s :mksession<CR>
+nnoremap <leader>a :Ag 
+nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
+nnoremap <leader>1 :set number!<CR>
+nnoremap <leader>d :Make! 
+nnoremap <leader>r :call RunTestFile()<CR>
+nnoremap <leader>g :call RunGoFile()<CR>
+vnoremap <leader>y "+y
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+inoremap jk <esc>
 
 " Fast vime file access
 " map <silent> <leader>ee :e $MYVIMRC<cr>
 nnoremap <Leader>ee :tabedit $MYVIMRC<CR>
+nnoremap <Leader>el :tabedit ~/.vimrc.local<CR>
 nnoremap <Leader>eb :tabedit $VIMFILES/rc/vime-bundle.vim<CR>
 nnoremap <Leader>eg :tabedit $VIMFILES/rc/vime-general.vim<CR>
 nnoremap <Leader>es :tabedit $VIMFILES/rc/vime-shortcut.vim<CR>
@@ -19,10 +56,7 @@ nnoremap <Leader>ef :tabedit $VIMFILES/rc/vime-function.vim<CR>
 " List all configuration files
 nnoremap <Leader>ea :tabnew $VIMFILES/rc/.<CR>
 
-nnoremap <Leader>ec :ColorSchemeExplorer<CR>
-
 map <silent> <leader>rc :source $MYVIMRC<cr>
-
 " Chrome-Like Tab short-keys
 nmap <C-t>      :tabnew<cr>
 "nmap <C-p>      :tabprevious<cr>
@@ -42,6 +76,14 @@ nmap <silent> <A-=> :wincmd +<CR>
 nmap <silent> <A--> :wincmd -<CR>
 nmap <silent> <A-.> > :wincmd ><CR>
 nmap <silent> <A-,> < :wincmd <<CR>
+" }}}
+
+
+
+
+
+
+
 
 
 " Space to toggle and create folds.
@@ -103,3 +145,4 @@ nnoremap <Leader>q :%s/\s\+$//<CR>:let @/=''<CR>
 command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
             \ | diffthis | wincmd p | diffthis
 
+" vim:foldmethod=marker:foldlevel=0

@@ -67,10 +67,15 @@ ln -s $vimedir/rc $vimdir/
 echo "Copying $vimedir/pre/vimrc_local.vim to $vimrc.local"
 cp $vimedir/pre/vimrc-local.vim $vimrc.local
 
-e_info "3. Installing Vundle..."
-git clone https://github.com/gmarik/Vundle.vim.git $vimdir/bundle/Vundle.vim
+e_info "3. Install Fonts..."
+git clone https://github.com/powerline/fonts.git $vimedir/powerline-fonts
+$vimedir/powerline-fonts/install.sh
+
+e_info "4. Installing Plug..."
+curl -fLo $vimdir/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 e_info "4. Installing plugins using Vundle..."
-vim -u $vimedir/pre/vimrc-update.vim +mapclear +PluginInstall! +PluginClean! +qall! $vimedir/vime.txt
+vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir/vime.txt
 
 e_title "vime has been successfully installed. Let's vimming!"

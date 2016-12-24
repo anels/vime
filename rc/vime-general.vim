@@ -157,6 +157,7 @@ if has('gui_running')
   set guioptions-=R           " 如有垂直分割的窗口，删除右边的滚动条
   " set guioptions-=l         " 删除左边的滚动条
   set guioptions-=L           " 如有垂直分割的窗口，删除左边的滚动条
+  set guioptions=e             
 endif
 
 " {{{ misc
@@ -166,16 +167,6 @@ set colorcolumn=+1 " Indicate text border
 
 " {{{ statusline settings
 set laststatus=2 " Show the statusline (set ls = 2)
-" Use vim-powerline instead of the statuls line
-" Note: see plugin-powerline.vim
-" Set the style of the status line
-" set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]%=[%p%%\ line:\ %l\ of\ %L\ col:\ %v]
-" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-" set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
-" set ruler " show ruler in status line
-" set rulerformat=%15(%c%V\ %p%%%)
-" set rulerformat=%=%h%m%r%w\ %(%c%V%),%l/%L\ %P
-" set showmode "show current mode in status line
 " }}}
 "
 " {{{ tab settings

@@ -5,7 +5,7 @@
 "         Author: Anels<anelsliu@gmail.com>
 "        Website: http://ruilinliu.com/
 "          Since: 2012-01-27
-"  Last Modified: 2014-04-10 04:11:03 PM
+"  Last Modified: 2016-12-19 01:16:47 AM
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -23,7 +23,9 @@ endif
 " Bundles {{{
 
 " Use default bundles config
-source $VIMFILES/rc/vime-bundle.vim
+" source $VIMFILES/rc/vime-bundle.vim
+source $VIMFILES/rc/vime-plug.vim
+source $VIMFILES/rc/vime-plugins-config.vim
 
 " Use local bundles if available
 if filereadable(expand("~/.vimrc.bundles.local"))
@@ -39,7 +41,7 @@ endif
 " colorscheme setting
 if has('gui_running')
   "colo evening
-  colorscheme molokai
+  colorscheme torte
 else
   set t_Co=256 " Use 256 colors
   "colorscheme distinguished
@@ -53,8 +55,8 @@ if has('gui_running')
     " set guifont=Inconsolata\ Medium\ 14
     " set guifont=Source\ Code\ Pro\ Medium\ 12
     " set guifont=Monospace\ 11
-    set guifont=Ubuntu\ Mono\ 12
-    set guifontwide=WenQuanYi\ Zen\ Hei\ Medium\ 14
+    set guifont=Ubuntu\ Mono\ 10
+    set guifontwide=WenQuanYi\ Zen\ Hei\ Medium\ 12
   elseif has('gui_macvim')
     set guifont=Monaco:h11
   elseif has('gui_win32')

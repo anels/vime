@@ -30,7 +30,7 @@ then
   cd $vimedir
   if git pull origin master
   then
-    vim -u $vimedir/pre/vimrc-update.vim +mapclear +BundleInstall! +BundleClean! +qa! $vimedir/vime.txt
+    vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qa! $vimedir/vime.txt
     e_info -e 'vime has been updated to the latest version.'
   else
     e_warn 'There was an error updating. Sorry!'
