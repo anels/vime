@@ -14,7 +14,7 @@ onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
 xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
 onoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
 xnoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
- 
+
 onoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
 xnoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
 onoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
@@ -33,10 +33,10 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>l :call ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>s :mksession<CR>
-nnoremap <leader>a :Ag 
+nnoremap <leader>a :Ag
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
-nnoremap <leader>d :Make! 
+nnoremap <leader>d :Make!
 nnoremap <leader>r :call RunTestFile()<CR>
 nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
@@ -104,8 +104,8 @@ vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 
 " 保存、处理行尾空格和多余空格，并清除高亮
-map <f3> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
-nmap b :<C-U>call BufPos_ActivateBuffer(v:count)<CR>
+" map <f3> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
+" nmap b :<C-U>call BufPos_ActivateBuffer(v:count)<CR>
 
 noremap <F3> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
 

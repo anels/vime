@@ -61,10 +61,13 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'Chiel92/vim-autoformat'
+let g:formatter_yapf_style = 'google'
+let g:autoformat_verbosemode=1
+
 
 if executable('ctags')
-  Plug 'majutsushi/tagbar'
-  " Plugin 'xolox/vim-easytags'
+    Plug 'majutsushi/tagbar'
+    " Plugin 'xolox/vim-easytags'
 endif
 
 " Plugin 'anels/vim-foldline'
