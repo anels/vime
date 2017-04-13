@@ -44,13 +44,13 @@ inoremap jk <esc>
 " map <silent> <leader>ee :e $MYVIMRC<cr>
 nnoremap <Leader>ee :tabedit $MYVIMRC<CR>
 nnoremap <Leader>el :tabedit ~/.vimrc.local<CR>
-nnoremap <Leader>eb :tabedit $VIMFILES/rc/vime-bundle.vim<CR>
+nnoremap <Leader>ep :tabedit $VIMFILES/rc/vime-plug.vim<CR>
 nnoremap <Leader>eg :tabedit $VIMFILES/rc/vime-general.vim<CR>
 nnoremap <Leader>es :tabedit $VIMFILES/rc/vime-shortcut.vim<CR>
 nnoremap <Leader>ef :tabedit $VIMFILES/rc/vime-function.vim<CR>
 
 " List all configuration files
-nnoremap <Leader>ea :tabnew $VIMFILES/rc/.<CR>
+nnoremap <Leader>ea :edit $VIMFILES/rc/.<CR>
 
 map <silent> <leader>rc :source $MYVIMRC<cr>
 " Chrome-Like Tab short-keys

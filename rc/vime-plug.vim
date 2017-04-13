@@ -33,7 +33,6 @@ Plug 'chriskempson/vim-tomorrow-theme'
 " {{{ UI Related
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'sjl/gundo.vim'
 
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
@@ -45,6 +44,11 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='bubblegum'
 
 " }}}
+
+
+Plug 'sjl/gundo.vim'
+nnoremap <Leader>u :GundoToggle<CR>
+
 
 " {{{ Auto Complete and Snippets
 Plug 'Shougo/neocomplcache'
@@ -89,7 +93,6 @@ endif
 " {{{ Plugin Configuration
 source $VIMFILES/rc/plugin-ctrlp.vim
 source $VIMFILES/rc/plugin-fugitive.vim
-source $VIMFILES/rc/plugin-gundo.vim
 source $VIMFILES/rc/plugin-indentguide.vim
 source $VIMFILES/rc/plugin-latex-suite.vim
 source $VIMFILES/rc/plugin-neocomplcache.vim
