@@ -13,7 +13,7 @@ function! IsWhiteLine()
     if (getline(".")=~"^$")
         let oldlinenumber=line(".")
         :call NERDComment('n', 'Sexy')
-        if (line(".")==oldlinenumber)
+        if (line(".")==oldlinenumber)  
             :call NERDComment('n', 'Append')
         else
             normal! k

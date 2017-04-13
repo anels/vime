@@ -14,6 +14,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " {{{ Colorschemes
 Plug 'jdevera/vim-cs-explorer'
+nnoremap <Leader>ec :ColorSchemeExplorer<CR>
+
+
+
 " 256-color
 Plug 'gmarik/ingretu'
 Plug 'Lokaltog/vim-distinguished'
@@ -32,7 +36,14 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'sjl/gundo.vim'
 
 Plug 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+
 Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='bubblegum'
+
 " }}}
 
 " {{{ Auto Complete and Snippets
@@ -63,7 +74,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
 let g:formatter_yapf_style = 'google'
 let g:autoformat_verbosemode=1
-
+let g:formatterpath = ['/Programs/astyle/build/gcc/bin']
 
 if executable('ctags')
     Plug 'majutsushi/tagbar'
@@ -74,6 +85,22 @@ endif
 
 " Plugin 'xuhdev/SingleCompile'
 
+
+" {{{ Plugin Configuration
+source $VIMFILES/rc/plugin-ctrlp.vim
+source $VIMFILES/rc/plugin-fugitive.vim
+source $VIMFILES/rc/plugin-gundo.vim
+source $VIMFILES/rc/plugin-indentguide.vim
+source $VIMFILES/rc/plugin-latex-suite.vim
+source $VIMFILES/rc/plugin-neocomplcache.vim
+source $VIMFILES/rc/plugin-nerdcommenter.vim
+source $VIMFILES/rc/plugin-nerdtree.vim
+source $VIMFILES/rc/plugin-rainbow-parentheses.vim
+source $VIMFILES/rc/plugin-syntastic.vim
+source $VIMFILES/rc/plugin-tagbar.vim
+source $VIMFILES/rc/plugin-tabular.vim
+
+" }}}
 
 
 call plug#end()
