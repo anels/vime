@@ -20,6 +20,7 @@ xnoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
 onoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
 xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
 " }}}
+
 " Leader Shortcuts {{{
 let mapleader= ',' " Change the mapleader
 

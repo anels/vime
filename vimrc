@@ -5,7 +5,7 @@
 "         Author: Anels<anelsliu@gmail.com>
 "        Website: http://ruilinliu.com/
 "          Since: 2012-01-27
-"  Last Modified: 2017-04-13 10:52:04 AM
+"  Last Modified: 2017-04-13 11:18:02 AM
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -17,20 +17,6 @@ else
     let $VIMFILES = $HOME.'/.vim'
 endif
 
-" =============================================================
-" Plug-ins Management
-" =============================================================
-" Bundles {{{
-
-" Use default bundles config
-" source $VIMFILES/rc/vime-bundle.vim
-source $VIMFILES/rc/vime-plug.vim
-source $VIMFILES/rc/vime-plugins-config.vim
-
-" Use local bundles if available
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
 
 
 " }}}
@@ -84,6 +70,12 @@ source $VIMFILES/rc/vime-function.vim
 source $VIMFILES/rc/vime-general.vim
 source $VIMFILES/rc/vime-shortcut.vim
 " }}}
+
+" Plugins {{{
+" Use default bundles config
+source $VIMFILES/rc/vime-plug.vim
+" }}}
+
 
 autocmd BufNewFile,BufRead *.tex source $VIMFILES/rc/filetype-tex.vim
 
