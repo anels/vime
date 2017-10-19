@@ -269,8 +269,8 @@ if has("autocmd")
   " autocmd BufWinLeave *.* silent! mkview " Make Vim save view (state) (folds, cursor, etc)
   " autocmd BufWinEnter *.* silent! loadview " Make Vim load view (state) (folds, cursor, etc)
 
-  autocmd BufWinLeave * if expand('%') != '' && &buftype == '' | mkview | endif
-  autocmd BufRead     * if expand('%') != '' && &buftype == '' | silent loadview | syntax on | endif
+  " autocmd BufWinLeave * if expand('%') != '' && &buftype == '' | mkview | endif
+  " autocmd BufRead     * if expand('%') != '' && &buftype == '' | silent loadview | syntax on | endif
 
   " Only show trailing whitespace when not in insert mode
   augroup trailing

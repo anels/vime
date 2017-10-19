@@ -9,20 +9,16 @@ call plug#begin('~/.vim/plugged')
 " Using a non-master branch
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
 " {{{ Colorschemes
 Plug 'jdevera/vim-cs-explorer'
 nnoremap <Leader>ec :ColorSchemeExplorer<CR>
-
 
 
 " 256-color
 Plug 'gmarik/ingretu'
 Plug 'Lokaltog/vim-distinguished'
 " gvim-dark
-Plug 'molokai'
+Plug 'tomasr/molokai'
 " gvim-light
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
@@ -62,13 +58,12 @@ Plug 'scrooloose/syntastic'
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
-Plug 'The-NERD-Commenter'
+Plug 'scrooloose/nerdcommenter'
 " }}}
 
 " Navigation
 Plug 'scrooloose/nerdtree', "{ 'on':  'NERDTreeToggle' }
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'a.vim'
 
 " Other
 Plug 'kien/ctrlp.vim'
@@ -81,8 +76,8 @@ let g:autoformat_verbosemode=1
 let g:formatterpath = ['/Programs/astyle/build/gcc/bin']
 
 if executable('ctags')
-    Plug 'majutsushi/tagbar'
-    " Plugin 'xolox/vim-easytags'
+  Plug 'majutsushi/tagbar'
+  source $VIMFILES/rc/plugin-tagbar.vim
 endif
 
 " Plugin 'anels/vim-foldline'
@@ -100,7 +95,6 @@ source $VIMFILES/rc/plugin-nerdcommenter.vim
 source $VIMFILES/rc/plugin-nerdtree.vim
 source $VIMFILES/rc/plugin-rainbow-parentheses.vim
 source $VIMFILES/rc/plugin-syntastic.vim
-source $VIMFILES/rc/plugin-tagbar.vim
 source $VIMFILES/rc/plugin-tabular.vim
 
 " }}}
