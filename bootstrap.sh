@@ -30,10 +30,6 @@ cat $vimedir/vime.txt
 
 e_title "Installing vime........"
 
-e_info "0. Checking requriements..."
-vim --version | grep 7.4 || die "Require vim 7.4. Please download and install vim from http://www.vim.org/"
-git --version || die "Require git. Please download and install git from http://git-scm.com/downloads/"
-ctags --version | grep 5.9 || die "Require ctags. Please download and install ctags from http://ctags.sourceforge.net/"
 
 e_info "1. Creating backup for current vim configuration..."
 if [ ! -x "$backupdir" ]; then

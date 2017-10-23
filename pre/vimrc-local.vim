@@ -28,7 +28,8 @@ if has('gui_running')
     " set guifont=Ubuntu\ Mono\ 14
     set guifontwide=WenQuanYi\ Zen\ Hei\ Medium\ 12
   elseif has('gui_macvim')
-    set guifont=Monaco:h11
+    " set guifont=Monaco:h11
+    set guifont=Noto\ Mono\ for\ Powerline\:h16
   elseif has('gui_win32')
     set guifont=Consolas:h11:cANSI
   endif
