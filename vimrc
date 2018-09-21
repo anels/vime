@@ -5,21 +5,29 @@
 "         Author: Anels<anelsliu@gmail.com>
 "        Website: http://ruilinliu.com/
 "          Since: 2012-01-27
-"  Last Modified: 2017-04-13 11:18:02 AM
+"  Last Modified: 2018-09-21 1:55:34 PM
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible " Get out of VI's compatible mode
 
-if has("win32")
-    let $VIMFILES = $VIM.'/vimfiles'
-else
-    let $VIMFILES = $HOME.'/.vim'
-endif
+let $VIMEDIR = $HOME.'/vime'
+let $VIMFILES = $HOME.'/vimfiles'
 
+" if has("win32") || has("win64") 
+    " let $VIMFILES = $HOME.'\vime'
+" else
+    " let $VIMFILES = $HOME.'/vime'
+" endif
 
-
+" {{{ Vime Configuration
+source $VIMEDIR\rc\vime-function.vim
+source $VIMEDIR\rc\vime-general.vim
+source $VIMEDIR\rc\vime-shortcut.vim
+source $VIMEDIR\rc\vime-plug.vim
 " }}}
+
+
 
 " =============================================================
 " Colorschemes and Fonts
@@ -27,7 +35,7 @@ endif
 " colorscheme setting
 if has('gui_running')
   "colo evening
-  colorscheme torte
+  colorscheme molokai
 else
   set t_Co=256 " Use 256 colors
   "colorscheme distinguished
@@ -45,7 +53,7 @@ if has('gui_running')
     set guifontwide=WenQuanYi\ Zen\ Hei\ Medium\ 12
   elseif has('gui_macvim')
     set guifont=Monaco:h11
-  elseif has('gui_win32')
+  elseif has('gui_win32') || has('gui_win64')
     set guifont=Consolas:h11:cANSI
   endif
 endif
@@ -54,35 +62,7 @@ endif
 " Advanced Settings
 " =============================================================
 
-" {{{ Platform Specific Configuration
-
-if has('win32') || has('win64')
-  source $VIMFILES/rc/vime-win.vim
-endif
-
-if has("mac") || has("gui_macvim")
-  source $VIMFILES/rc/vime-mac.vim
-endif
-" }}}
-
-" {{{ Vime Configuration
-source $VIMFILES/rc/vime-function.vim
-source $VIMFILES/rc/vime-general.vim
-source $VIMFILES/rc/vime-shortcut.vim
-" }}}
-
-" Plugins {{{
-" Use default bundles config
-source $VIMFILES/rc/vime-plug.vim
-" }}}
-
-
-autocmd BufNewFile,BufRead *.tex source $VIMFILES/rc/filetype-tex.vim
-
-" Use local bundles if available
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
+autocmd BufNewFile,BufRead *.tex source $VIMEDIR/rc/filetype-tex.vim
 
 
 " =============================================================

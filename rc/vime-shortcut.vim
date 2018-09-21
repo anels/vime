@@ -25,13 +25,10 @@ xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
 let mapleader= ',' " Change the mapleader
 
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
-nnoremap <leader>w :NERDTree<CR>
-nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>h :A<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>l :call ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>s :mksession<CR>
 nnoremap <leader>a :Ag
@@ -42,16 +39,14 @@ vmap <C-v> <Plug>(expand_region_shrink)
 inoremap jk <esc>
 
 " Fast vime file access
-" map <silent> <leader>ee :e $MYVIMRC<cr>
-nnoremap <Leader>ee :tabedit $MYVIMRC<CR>
-nnoremap <Leader>el :tabedit ~/.vimrc.local<CR>
-nnoremap <Leader>ep :tabedit $VIMFILES/rc/vime-plug.vim<CR>
-nnoremap <Leader>eg :tabedit $VIMFILES/rc/vime-general.vim<CR>
-nnoremap <Leader>es :tabedit $VIMFILES/rc/vime-shortcut.vim<CR>
-nnoremap <Leader>ef :tabedit $VIMFILES/rc/vime-function.vim<CR>
+nnoremap <Leader>ee :tabedit $VIMEDIR/vimrc<CR>
+nnoremap <Leader>ep :tabedit $VIMEDIR/rc/vime-plug.vim<CR>
+nnoremap <Leader>eg :tabedit $VIMEDIR/rc/vime-general.vim<CR>
+nnoremap <Leader>es :tabedit $VIMEDIR/rc/vime-shortcut.vim<CR>
+nnoremap <Leader>ef :tabedit $VIMEDIR/rc/vime-function.vim<CR>
 
 " List all configuration files
-nnoremap <Leader>ea :edit $VIMFILES/rc/.<CR>
+nnoremap <Leader>ea :edit $VIMEDIR/rc/.<CR>
 
 map <silent> <leader>rc :source $MYVIMRC<cr>
 " Chrome-Like Tab short-keys
@@ -104,7 +99,6 @@ vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 " map <f3> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
 " nmap b :<C-U>call BufPos_ActivateBuffer(v:count)<CR>
 
-noremap <F3> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
 
 map <F4> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
 

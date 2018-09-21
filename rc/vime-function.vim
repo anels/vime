@@ -47,14 +47,6 @@ func! SelectAll()
     exe "norm gg" . (&slm == "" ? "VG" : "gH\<C-O>G")
 endfunc
 
-"Get short tab label (Only shows the filename)
-func! GetShortTabLabel()
-    let bufnrlist = tabpagebuflist(v:lnum)
-    let label = bufname(bufnrlist[tabpagewinnr(v:lnum) -1])
-    let filename = fnamemodify(label, ':t')
-    return filename
-endfunc
-
 " func! VisualSearch(direction) range
 " let l:saved_reg = @"
 " execute "normal! vgvy"
@@ -65,6 +57,7 @@ endfunc
 " if a:direction == 'b'
 " execute "normal ?" . l:pattern . "^M"
 " elseif a:direction == 'gv'
+noremap <F3> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
 " call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
 " elseif a:direction == 'f'
 " execute "normal /" . l:pattern . "^M"

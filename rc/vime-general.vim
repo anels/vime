@@ -8,8 +8,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-call InitializeDirectories()
-
 set undolevels=1000 "maximum number of changes that can be undone
 
 set autoread " auto reload file when it is changed outside
@@ -113,7 +111,7 @@ set list " Show these tabs and spaces and so on
 set listchars=tab:\|\ ,nbsp:%,trail:-
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Change listchars
 "set showbreak=↪  " Change wrap line break
-set fillchars=diff:⣿,vert:│ " Change fillchars
+" set fillchars=diff:⣿,vert:│ " Change fillchars
 
 " auto-complete in command mode
 " complete to longest match, then list possibilities
@@ -168,16 +166,7 @@ set colorcolumn=+1 " Indicate text border
 " {{{ statusline settings
 set laststatus=2 " Show the statusline (set ls = 2)
 " }}}
-"
-" {{{ tab settings
-set showtabline=2 " Always show tab line
-set tabpagemax=15 " Set maximum number of tab pages
-" Set up tab tooltips with every buffer name
-if has('gui_running')
-  set guitabtooltip=%F
-  set guitablabel=%{GetShortTabLabel()} "Only show the file name
-endif
-" }}}
+
 
 " ----> Highlighting Settings
 " highlight search matches
@@ -245,7 +234,7 @@ else
 endif
 
 " on Windows, default charset is gbk
-if has("win32")
+if has("win32") || has("win64")
   let g:fontsize#encoding = "cp936"
 endif
 
@@ -289,78 +278,6 @@ if has("autocmd")
   " augroup END
 
 endif
-
-" {{{ filetype dependent
-autocmd BufNewFile,BufRead *.html setlocal commentstring=<!--%s-->
-" ruby commenstring
-autocmd FileType ruby setlocal commentstring=#%s
-" make help navigation easier
-autocmd FileType help nnoremap <buffer> <CR> <C-]>
-autocmd FileType help nnoremap <buffer> <BS> <C-T>
-
-autocmd BufNewFile,BufRead * setlocal nospell
-autocmd BufNewFile,BufRead *.cpp setlocal foldmethod=syntax
-
-" QuickFix
-augroup ft_quickfix
-    autocmd!
-    autocmd Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap textwidth=0
-augroup END
-
-" LESS
-augroup ft_less
-    autocmd!
-    autocmd filetype less nnoremap <buffer> <Leader>r :w <BAR> !lessc % > %:t:r.css<CR><Space>
-augroup END
-
-" Python
-augroup ft_python
-
-    " Indent Python in the Google way.
-    let s:maxoff = 50 " maximum number of lines to look backwards.
-    function! GetGooglePythonIndent(lnum)
-        " Indent inside parens.
-        " Align with the open paren unless it is at the end of the line.
-        " E.g.
-        "   open_paren_not_at_EOL(100,
-        "                         (200,
-        "                          300),
-        "                         400)
-        "   open_paren_at_EOL(
-        "       100, 200, 300, 400)
-        call cursor(a:lnum, 1)
-        let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-                    \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-                    \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-                    \ . " =~ '\\(Comment\\|String\\)$'")
-        if par_line > 0
-            call cursor(par_line, 1)
-            if par_col != col("$") - 1
-                return par_col
-            endif
-        endif
-        " Delegate the rest to the original function.
-        return GetPythonIndent(a:lnum)
-    endfunction
-
-    let pyindent_nested_paren="&sw*2"
-    let pyindent_open_paren="&sw*2"
-
-    autocmd!
-    autocmd filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-    autocmd filetype python nnoremap <buffer> <Leader>r :call ChoosePythonCompiler()<CR>
-
-augroup END
-
-" Perl
-augroup ft_perl
-    let perl_include_pod=1
-    let perl_extended_vars=1
-    let perl_sync_dist=250
-    autocmd!
-    autocmd filetype perl setlocal keywordprg=perldoc\ -f
-augroup END
-" }}}
 
 " }}}
 
