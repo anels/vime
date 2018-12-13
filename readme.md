@@ -34,11 +34,8 @@ You can change the vime directory `~/vime` to any dictionary you want. You can e
 
 2. Enter vime directory, bootstrap vime
 ```
-    ./bootstrap.sh
+    ./bootstrap_linux.sh
 ```
-### Windows & Mac
-
-Not supported at this moment.
 
 ## Update
 
@@ -50,7 +47,7 @@ Not supported at this moment.
 
 #### Update plugins
 
-    vim +BundleInstall! +BundleClean +qall
+    :PlugUpdate
 
 ### Automatically Update
 
@@ -63,15 +60,15 @@ Run
 Most of the customization files are in <code>rc</code>
 
 * vimrc -> <code>vimrc</code>
-* vime plugin configuration -> <code>rc/vime-bundle.vim</code>
+* vime plugin configuration -> <code>rc/vime-plug.vim</code>
 * vime general configuration -> <code>rc/vime-general.vim</code>
 * Self-defined functions -> <code>rc/vime-function.vim</code>
 * Key shortcuts mappings -> <code>rc/vime-shortcut.vim</code>
-* Plugin-specific settings -> <code>rc/plugin-*.vim</code>
+* 
 
 ## Plugin List
 
-* [Vundle](https://github.com/gmarik/vundle) - Manage Vim plugins
+* ~~[Vundle](https://github.com/gmarik/vundle) - Manage Vim plugins~~
 * [Tagbar](https://github.com/majutsushi/tagbar) - Browse the tags of source code files
   * `<F10>` to toggle Tagbar.
 * [NERD_tree](https://github.com/scrooloose/nerdtree) - Explore filesystem and to open files and directories
@@ -92,16 +89,13 @@ Most of the customization files are in <code>rc</code>
   * Exit: <code>q</code>
 
 #### Coding
-* [a.vim](http://www.vim.org/scripts/script.php?script_id=31) Fast switch between .h .cpp
-  * shortkey <code>：A</code>
 * [Syntastic](https://github.com/scrooloose/syntastic) - Syntax check that runs files through external syntax checkers
   * <code>&lt;Leader&gt;se</code> Show detected erros.
 * [NERD_commenter](https://github.com/scrooloose/nerdcommenter) - Provide many different commenting operations and styles
 * [Indent Guides](https://github.com/mutewinter/vim-indent-guides) - Display vertical lines to visualize levels
   * <code>&lt;Leader&gt;ig</code> Toggle indent guides.
-* [fugitive](https://github.com/tpope/vim-fugitive) - Git wrapper (requires
-  git to be installed)
-* [Gundo](https://github.com/sjl/gundo.vim) - Visualize Vim undo tree
+* [fugitive](https://github.com/tpope/vim-fugitive) - Git wrapper (requires git to be installed)
+* ~~[Gundo](https://github.com/sjl/gundo.vim) - Visualize Vim undo tree~~
 * [EasyTags](https://github.com/xolox/vim-easytags) - Automated tag generation and syntax highlighting in Vim
 * [Unite](https://github.com/Shougo/unite.vim) - Search and display information from arbitrary sources
 
