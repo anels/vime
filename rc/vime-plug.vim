@@ -28,6 +28,15 @@ Plug 'chriskempson/vim-tomorrow-theme'
 
 " {{{ UI Related
 Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup=0
+let g:indent_guides_guide_size=2
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=black ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=4
+
+nnoremap <Leader>ig :IndentGuidesToggle<CR>
+
+
 
 Plug 'kien/rainbow_parentheses.vim'
 let g:rbpt_max = 16
@@ -115,13 +124,22 @@ Plug 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Plugin 'xuhdev/SingleCompile'
-" Plug 'tpope/vim-fugitive'
+if executable('git')
+  Plug 'tpope/vim-fugitive'
+" nnoremap <silent> <leader>gs :Gstatus<CR>
+" nnoremap <silent> <leader>gd :Gdiff<CR>
+" nnoremap <silent> <leader>gc :Gcommit<CR>
+" nnoremap <silent> <leader>gb :Gblame<CR>
+" nnoremap <silent> <leader>gl :Glog<CR>
+" nnoremap <silent> <leader>gp :Git push<CR>
+endif
 
 Plug 'Chiel92/vim-autoformat'
 let g:formatter_yapf_style = 'google'
 let g:autoformat_verbosemode=1
-let g:formatterpath = ['/Programs/astyle/build/gcc/bin']
-noremap <F6> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
+"let g:formatterpath = ['/Programs/astyle/build/gcc/bin']
+let g:formatterpath = ['C:\Users\ruilliu\AStyle\bin']
+noremap <F6> :Autoformat<CR> "require plugin 'Chiel92/vim-autoformat'
 
 
 
@@ -148,9 +166,8 @@ endif
 
 
 " {{{ Plugin Configuration
-" source $VIMFILES\rc\plugin-fugitive.vim
-source $VIMEDIR/rc/plugin-indentguide.vim
-source $VIMEDIR/rc/plugin-latex-suite.vim
+"source $VIMEDIR/rc/plugin-latex-suite.vim
+"autocmd BufNewFile,BufRead *.tex source $VIMEDIR/rc/filetype-tex.vim
 source $VIMEDIR/rc/plugin-neocomplcache.vim
 " }}}
 

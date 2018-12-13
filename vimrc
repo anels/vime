@@ -59,12 +59,6 @@ if has('gui_running')
   endif
 endif
 
-" =============================================================
-" Advanced Settings
-" =============================================================
-
-autocmd BufNewFile,BufRead *.tex source $VIMEDIR/rc/filetype-tex.vim
-
 
 " =============================================================
 " AutoCmd
