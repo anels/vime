@@ -73,8 +73,8 @@ endif
 " {{{ Auto Complete and Snippets
 Plug 'Shougo/neocomplcache'
 " Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
+"Plug 'honza/vim-snippets'
+"Plug 'ervandew/supertab'
 " }}}
 
 " {{{ Automatic Helper
@@ -115,7 +115,7 @@ nnoremap <Leader>d :NERDTreeTabsToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 let NERDTreeChDirMode=2
 let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=['\.o$', '\~$']
@@ -147,7 +147,7 @@ noremap <F6> :Autoformat<CR> "require plugin 'Chiel92/vim-autoformat'
 
 
 " New
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 Plug 'szw/vim-maximizer'
 nnoremap <silent><F3> :MaximizerToggle<CR>
 vnoremap <silent><F3> :MaximizerToggle<CR>

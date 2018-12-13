@@ -60,8 +60,6 @@ echo "Linking $vimrc -> $vimedir/vimrc ..."
 ln -s $vimedir/vimrc $vimrc
 echo "Linking $vimdir/ -> $vimedir/rc/ ..."
 ln -s $vimedir/rc $vimdir/
-echo "Copying $vimedir/pre/vimrc_local.vim to $vimrc.local"
-cp $vimedir/pre/vimrc-local.vim $vimrc.local
 
 e_info "3. Install Fonts..."
 git clone https://github.com/powerline/fonts.git $vimedir/powerline-fonts
