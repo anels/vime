@@ -14,6 +14,14 @@ The distribution is designed to work with Vim >= 7.3.
 
 The distribution also requires `ctags` and `git`.
 
+### ctags
+Currently I use [universal-ctags](https://github.com/universal-ctags/ctags).
+
+For Windows, just downloaded the zip file, unzip it and add the directory to the
+Path.
+
+
+
 ## Installation
 
 ### *nix

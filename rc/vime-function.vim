@@ -7,40 +7,6 @@ function! LastModified() " {{{
                 \ strftime("%Y-%m-%d %X") . "/e"
 endfunction " }}}
 
-function! InitializeDirectories() " {{{
-    let dir_list={
-                \ 'backup': 'backupdir',
-                \ 'view': 'viewdir',
-                \ 'swap': 'directory'}
-    if has('persistent_undo')
-        let dir_list['undo'] = 'undodir'
-    endif
-    for [dirname, settingname] in items(dir_list)
-        let directory=$VIMFILES.'/'.dirname.'/'
-        if !isdirectory(directory)
-            if exists('*mkdir')
-                call mkdir(directory)
-                exec 'set '.settingname.'='.directory
-            else
-                echo "Warning: Unable to create directory: ".directory
-                echo "Try: mkdir -p ".directory
-            endif
-        else
-            exec 'set '.settingname.'='.directory
-        endif
-    endfor
-endfunction "}}}
-
-function! RemoveOldViewFiles ()
-    exec '!find '.$VIMFILES.'/view/* -mtime +30 -exec rm {} \;'
-endfunction
-nmap <silent><leader>rvo :call RemoveOldViewFiles()<cr>
-
-function! RemoveAllViewFiles ()
-    exec '!find '.$VIMFILES.'/view/* -exec rm {} \;'
-endfunction
-nmap <silent><leader>rvv :call RemoveAllViewFiles()<cr>
-
 " Select All Text
 func! SelectAll()
     let s:current = line('.')
@@ -57,7 +23,6 @@ endfunc
 " if a:direction == 'b'
 " execute "normal ?" . l:pattern . "^M"
 " elseif a:direction == 'gv'
-noremap <F3> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
 " call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
 " elseif a:direction == 'f'
 " execute "normal /" . l:pattern . "^M"

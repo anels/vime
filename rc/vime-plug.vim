@@ -11,7 +11,7 @@ call plug#begin($VIMFILES.'/plugged')
 
 " {{{ Colorschemes
 Plug 'jdevera/vim-cs-explorer'
-nnoremap <Leader>ec :ColorSchemeExplorer<CR>
+"nnoremap <Leader>ec :ColorSchemeExplorer<CR>
 
 
 " 256-color
@@ -38,8 +38,6 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 
-
-
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -49,12 +47,18 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='bubblegum'
-
 " }}}
 
 
-Plug 'sjl/gundo.vim'
-nnoremap <Leader>u :GundoToggle<CR>
+"Plug 'sjl/gundo.vim' " requires python 2.x
+"nnoremap <Leader>u :GundoToggle<CR>
+
+Plug 'mbbill/undotree'
+nnoremap <Leader>u :UndotreeToggle<CR>
+if has("persistent_undo")
+  set undodir=~/.undodir/
+  set undofile
+endif
 
 
 " {{{ Auto Complete and Snippets
@@ -66,9 +70,32 @@ Plug 'ervandew/supertab'
 
 " {{{ Automatic Helper
 Plug 'scrooloose/syntastic'
+nnoremap <Leader>se :Errors<CR>
+let g:syntastic_check_on_open=1
+" let g:syntastic_auto_jump=1
+let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+
+
 " Plugin 'Raimondi/delimitMate'
 " Plugin 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
+nmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a& :Tabularize /&<CR>
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+
+
+
+
 Plug 'scrooloose/nerdcommenter'
 " }}}
 
@@ -84,49 +111,47 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=['\.o$', '\~$']
 
-
 Plug 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-" Other
-Plug 'kien/ctrlp.vim'
-
+" Plugin 'xuhdev/SingleCompile'
 " Plug 'tpope/vim-fugitive'
 
 Plug 'Chiel92/vim-autoformat'
 let g:formatter_yapf_style = 'google'
 let g:autoformat_verbosemode=1
 let g:formatterpath = ['/Programs/astyle/build/gcc/bin']
-noremap <F3> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
+noremap <F6> :Autoformat<CR><CR> " require plugin 'Chiel92/vim-autoformat'
 
 
-" New 
+
+"Plug 'vimwiki/vimwiki'
+
+
+" New
 Plug 'plasticboy/vim-markdown'
 Plug 'szw/vim-maximizer'
 nnoremap <silent><F3> :MaximizerToggle<CR>
-vnoremap <silent><F3> :MaximizerToggle<CR>gv
+vnoremap <silent><F3> :MaximizerToggle<CR>
 inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
 
 
 if executable('ctags')
   Plug 'majutsushi/tagbar'
-  source $VIMFILES/rc/plugin-tagbar.vim
+  nnoremap <F10> :TagbarToggle<CR>
+  let g:tagbar_autofocus=1
+  let g:tagbar_expand=1
+  let g:tagbar_foldlevel=2
+  let g:tagbar_ironchars=['▾', '▸']
+  let g:tagbar_autoshowtag=1
 endif
 
-" Plugin 'anels/vim-foldline'
-
-" Plugin 'xuhdev/SingleCompile'
 
 " {{{ Plugin Configuration
-source $VIMEDIR\rc\plugin-ctrlp.vim
 " source $VIMFILES\rc\plugin-fugitive.vim
-source $VIMEDIR\rc\plugin-indentguide.vim
-source $VIMEDIR\rc\plugin-latex-suite.vim
-source $VIMEDIR\rc\plugin-neocomplcache.vim
-source $VIMEDIR\rc\plugin-nerdcommenter.vim
-source $VIMEDIR\rc\plugin-syntastic.vim
-source $VIMEDIR\rc\plugin-tabular.vim
-
+source $VIMEDIR/rc/plugin-indentguide.vim
+source $VIMEDIR/rc/plugin-latex-suite.vim
+source $VIMEDIR/rc/plugin-neocomplcache.vim
 " }}}
 
 

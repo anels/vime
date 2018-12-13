@@ -146,16 +146,13 @@ set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servernam
 
 " Set gVim UI setting
 if has('gui_running')
-  "set guioptions=mcr         " 只显示菜单
-  "set guioptions=            " 隐藏全部的gui选项
-  "set guioptions+=r          " 显示gui右边滚动条
-  " set guioptions-=T           " 隐藏工具栏
+  " set guioptions=mcr         " 只显示菜单
+  set guioptions-=T           " 隐藏工具栏
   " set guioptions-=m         " 隐藏菜单栏
   set guioptions-=r         " 删除右边的滚动条
+  set guioptions-=l         " 删除左边的滚动条
   set guioptions-=R           " 如有垂直分割的窗口，删除右边的滚动条
-  " set guioptions-=l         " 删除左边的滚动条
   set guioptions-=L           " 如有垂直分割的窗口，删除左边的滚动条
-  set guioptions=eM
 endif
 
 " {{{ misc
@@ -203,7 +200,6 @@ set foldcolumn=2
 set foldmethod=marker
 " set foldmethod=syntax
 set foldlevelstart=0 " Start with all folds closed
-let g:Foldtext_enable=1
 " }}}
 
 " }}}

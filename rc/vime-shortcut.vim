@@ -25,30 +25,26 @@ xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
 let mapleader= ',' " Change the mapleader
 
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
-nnoremap <leader>h :A<CR>
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader><space> :noh<CR>
-nnoremap <leader>s :mksession<CR>
-nnoremap <leader>a :Ag
-nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
+vnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 vnoremap <leader>y "+y
+
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 inoremap jk <esc>
 
 " Fast vime file access
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <Leader>ee :tabedit $VIMEDIR/vimrc<CR>
 nnoremap <Leader>ep :tabedit $VIMEDIR/rc/vime-plug.vim<CR>
 nnoremap <Leader>eg :tabedit $VIMEDIR/rc/vime-general.vim<CR>
 nnoremap <Leader>es :tabedit $VIMEDIR/rc/vime-shortcut.vim<CR>
 nnoremap <Leader>ef :tabedit $VIMEDIR/rc/vime-function.vim<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " List all configuration files
 nnoremap <Leader>ea :edit $VIMEDIR/rc/.<CR>
 
-map <silent> <leader>rc :source $MYVIMRC<cr>
 " Chrome-Like Tab short-keys
 nmap <C-t>      :tabnew<cr>
 "nmap <C-p>      :tabprevious<cr>
@@ -57,25 +53,18 @@ nmap <C-w>      :tabclose<cr>
 nmap <C-Tab>    :tabnext<cr>
 nmap <C-S-Tab>  :tabprevious<cr>
 
-nmap <Leader>w :wincmd
-nmap <Leader>ww :wincmd w<CR>
-nmap <Leader>wc :wincmd c<CR>
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-nmap <silent> <A-=> :wincmd +<CR>
-nmap <silent> <A--> :wincmd -<CR>
-nmap <silent> <A-.> > :wincmd ><CR>
-nmap <silent> <A-,> < :wincmd <<CR>
+"nmap <Leader>w :wincmd
+"nmap <Leader>ww :wincmd w<CR>
+"nmap <Leader>wc :wincmd c<CR>
+"nmap <silent> <A-Up> :wincmd k<CR>
+"nmap <silent> <A-Down> :wincmd j<CR>
+"nmap <silent> <A-Left> :wincmd h<CR>
+"nmap <silent> <A-Right> :wincmd l<CR>
+"nmap <silent> <A-=> :wincmd +<CR>
+"nmap <silent> <A--> :wincmd -<CR>
+"nmap <silent> <A-.> > :wincmd ><CR>
+"nmap <silent> <A-,> < :wincmd <<CR>
 " }}}
-
-
-
-
-
-
-
 
 
 " Space to toggle and create folds.
