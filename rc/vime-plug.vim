@@ -153,6 +153,7 @@ nnoremap <silent><F3> :MaximizerToggle<CR>
 vnoremap <silent><F3> :MaximizerToggle<CR>
 inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
 
+Plug 'wakatime/vim-wakatime'
 
 if executable('ctags')
   Plug 'majutsushi/tagbar'
@@ -163,6 +164,9 @@ if executable('ctags')
   let g:tagbar_ironchars=['▾', '▸']
   let g:tagbar_autoshowtag=1
 endif
+
+
+Plug 'rhysd/vim-grammarous'
 
 
 " {{{ Plugin Configuration
