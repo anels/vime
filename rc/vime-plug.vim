@@ -48,7 +48,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 Plug 'vim-airline/vim-airline'
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -153,8 +153,6 @@ nnoremap <silent><F3> :MaximizerToggle<CR>
 vnoremap <silent><F3> :MaximizerToggle<CR>
 inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
 
-Plug 'wakatime/vim-wakatime'
-
 if executable('ctags')
   Plug 'majutsushi/tagbar'
   nnoremap <F10> :TagbarToggle<CR>
@@ -172,7 +170,7 @@ Plug 'rhysd/vim-grammarous'
 " {{{ Plugin Configuration
 "source $VIMEDIR/rc/plugin-latex-suite.vim
 "autocmd BufNewFile,BufRead *.tex source $VIMEDIR/rc/filetype-tex.vim
-source $VIMEDIR/rc/plugin-neocomplcache.vim
+"source $VIMEDIR/rc/plugin-neocomplcache.vim
 " }}}
 
 

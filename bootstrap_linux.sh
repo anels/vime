@@ -39,9 +39,11 @@ fi
 if [ -f "$vimrc" ]; then
   echo "Backing up $vimrc ..."
   cp $vimrc $backupdir
-  cp $vimrc.local $backupdir
   rm $vimrc
-  rm $vimrc.local
+  if [ -f "$vimrc.local" ]; then
+    cp $vimrc.local $backupdir
+    rm $vimrc.local
+  fi
 fi
 
 if [ -x "$vimdir" ]; then
@@ -62,14 +64,16 @@ echo "Linking $vimdir/ -> $vimedir/rc/ ..."
 ln -s $vimedir/rc $vimdir/
 
 e_info "3. Install Fonts..."
-git clone https://github.com/powerline/fonts.git $vimedir/powerline-fonts
-$vimedir/powerline-fonts/install.sh
+if ![ -f "$vimedir/powerline-fonts" ]; then
+  git clone https://github.com/powerline/fonts.git $vimedir/powerline-fonts
+  $vimedir/powerline-fonts/install.sh
+fi
 
 e_info "4. Installing Plug..."
 curl -fLo $vimdir/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 e_info "4. Installing plugins using Vundle..."
-vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir/vime.txt
+# vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir/vime.txt
 
 e_title "vime has been successfully installed. Let's vimming!"
