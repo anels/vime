@@ -55,7 +55,7 @@ if has('gui_running')
     set guifont=Monaco:h11
   elseif has('gui_win32') || has('gui_win64')
     "set guifont=Consolas:h11:cANSI
-    "set guifont=Inconsolata:h13:cANSI
+    "set guifont=Inconsolata:h20:cANSI
     set guifont=Fira_Code_Retina:h13:cANSI
   endif
 endif
