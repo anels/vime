@@ -36,7 +36,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=4
 
 nnoremap <Leader>ig :IndentGuidesToggle<CR>
 
-
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'kien/rainbow_parentheses.vim'
 let g:rbpt_max = 16
@@ -65,8 +65,8 @@ let g:airline_theme='bubblegum'
 Plug 'mbbill/undotree'
 nnoremap <Leader>u :UndotreeToggle<CR>
 if has("persistent_undo")
-  set undodir=~/.undodir/
-  set undofile
+    set undodir=~/.undodir/
+    set undofile
 endif
 
 
@@ -125,13 +125,13 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Plugin 'xuhdev/SingleCompile'
 if executable('git')
-  Plug 'tpope/vim-fugitive'
-" nnoremap <silent> <leader>gs :Gstatus<CR>
-" nnoremap <silent> <leader>gd :Gdiff<CR>
-" nnoremap <silent> <leader>gc :Gcommit<CR>
-" nnoremap <silent> <leader>gb :Gblame<CR>
-" nnoremap <silent> <leader>gl :Glog<CR>
-" nnoremap <silent> <leader>gp :Git push<CR>
+    Plug 'tpope/vim-fugitive'
+    " nnoremap <silent> <leader>gs :Gstatus<CR>
+    " nnoremap <silent> <leader>gd :Gdiff<CR>
+    " nnoremap <silent> <leader>gc :Gcommit<CR>
+    " nnoremap <silent> <leader>gb :Gblame<CR>
+    " nnoremap <silent> <leader>gl :Glog<CR>
+    " nnoremap <silent> <leader>gp :Git push<CR>
 endif
 
 Plug 'Chiel92/vim-autoformat'
@@ -154,13 +154,13 @@ vnoremap <silent><F3> :MaximizerToggle<CR>
 inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
 
 if executable('ctags')
-  Plug 'majutsushi/tagbar'
-  nnoremap <F10> :TagbarToggle<CR>
-  let g:tagbar_autofocus=1
-  let g:tagbar_expand=1
-  let g:tagbar_foldlevel=2
-  let g:tagbar_ironchars=['▾', '▸']
-  let g:tagbar_autoshowtag=1
+    Plug 'majutsushi/tagbar'
+    nnoremap <F10> :TagbarToggle<CR>
+    let g:tagbar_autofocus=1
+    let g:tagbar_expand=1
+    let g:tagbar_foldlevel=2
+    let g:tagbar_ironchars=['▾', '▸']
+    let g:tagbar_autoshowtag=1
 endif
 
 

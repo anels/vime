@@ -3,9 +3,8 @@
 "             .vimrc of vime
 "
 "         Author: Anels<anelsliu@gmail.com>
-"        Website: http://ruilinliu.com/
 "          Since: 2012-01-27
-"  Last Modified: 2018-09-21 1:55:34 PM
+"  Last Modified: 2021-08-24 9:33:57 PM
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -14,12 +13,6 @@ set nocompatible " Get out of VI's compatible mode
 let $VIMEDIR = $HOME.'/vime'
 let $VIMFILES = $HOME.'/vimfiles'
 
-" if has("win32") || has("win64") 
-    " let $VIMFILES = $HOME.'\vime'
-" else
-    " let $VIMFILES = $HOME.'/vime'
-" endif
-
 " {{{ Vime Configuration
 source $VIMEDIR\rc\vime-function.vim
 source $VIMEDIR\rc\vime-general.vim
@@ -27,11 +20,10 @@ source $VIMEDIR\rc\vime-shortcut.vim
 source $VIMEDIR\rc\vime-plug.vim
 " }}}
 
-
-
 " =============================================================
 " Colorschemes and Fonts
 " =============================================================
+
 " colorscheme setting
 if has('gui_running')
   "colo evening
