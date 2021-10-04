@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 $vimedir = $PWD
 
 $vimrc = "$HOME\_vimrc"
@@ -10,9 +12,7 @@ Get-Content $vimedir\vime.txt
 Write-Host -ForegroundColor Green "Installing vime........"
 
 Write-Host -ForegroundColor Green "1. Creating backup for current vim configuration..."
-# if [ ! -x "$backupdir" ]; then
-#   mkdir "$backupdir"
-# fi
+New-Item -ItemType Directory -Force -Path $backupdir | Out-Null
 
 # if [ -f "$vimrc" ]; then
 #   echo "Backing up $vimrc ..."
@@ -24,24 +24,25 @@ Write-Host -ForegroundColor Green "1. Creating backup for current vim configurat
 #   fi
 # fi
 
-# if [ -x "$vimdir" ]; then
-#   echo "Backing up $vimdir/ ..."
-#   cp -rf $vimdir $backupdir
-#   rm -rf $vimdir
-# fi
+If (Test-Path $vimdir) {
+	Copy-Item $vimdir $backupdir\vimdir -Recurse -Force | Out-Null
+    Remove-Item $vimdir -Recurse -Force | Out-Null
+}
 
-# backup_name=vimbackup_`date '+%Y-%m-%d-%H%M%S'`.tar.gz
-# echo "Compressing backup files into $backup_name ..."
+$backup_name="vimbackup_$(Get-Date -Format "yyyyMMdd-hhmmss").zip"
+Write-Host "Compressing backup files into $backup_name ..."
 # tar zcf $backupdir/../$backup_name -C $backupdir/.. vim_backup --remove-files
+Compress-Archive -Path $backupdir -DestinationPath $HOME\$backup_name
+Remove-Item $backupdir -Recurse -Force | Out-Null
 
 Write-Host -ForegroundColor Green "2. Creating soft links of vime..."
-mkdir $vimdir
-New-Item -Path $vimrc -ItemType SymbolicLink -Value $vimedir\vimrc
+New-Item -ItemType Directory -Force -Path $vimdir  | Out-Null
+New-Item -Path $vimrc -ItemType SymbolicLink -Value $vimedir\vimrc -Force
 New-Item -Path $vimdir -ItemType Junction -Value $vimedir\rc
 
 Write-Host -ForegroundColor Green "4. Installing Plug..."
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    New-Item $HOME/vimfiles/autoload/plug.vim -Force
+New-Item $HOME/vimfiles/autoload/plug.vim -Force
 
 Write-Host -ForegroundColor Green "4. Installing plugins using Vundle..."
 Invoke-Expression "vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir\vime.txt"

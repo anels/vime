@@ -14,10 +14,10 @@ let $VIMEDIR = $HOME.'/vime'
 let $VIMFILES = $HOME.'/vimfiles'
 
 " {{{ Vime Configuration
-source $VIMEDIR\rc\vime-function.vim
-source $VIMEDIR\rc\vime-general.vim
-source $VIMEDIR\rc\vime-shortcut.vim
-source $VIMEDIR\rc\vime-plug.vim
+source $VIMEDIR\\rc\\vime-function.vim
+source $VIMEDIR\\rc\\vime-general.vim
+source $VIMEDIR\\rc\\vime-shortcut.vim
+source $VIMEDIR\\rc\\vime-plug.vim
 " }}}
 
 " =============================================================
