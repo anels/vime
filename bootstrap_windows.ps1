@@ -25,11 +25,11 @@ New-Item -ItemType Directory -Force -Path $backupdir | Out-Null
 # fi
 
 If (Test-Path $vimdir) {
-	Copy-Item $vimdir $backupdir\vimdir -Recurse -Force | Out-Null
+    Copy-Item $vimdir $backupdir\vimdir -Recurse -Force | Out-Null
     Remove-Item $vimdir -Recurse -Force | Out-Null
 }
 
-$backup_name="vimbackup_$(Get-Date -Format "yyyyMMdd-hhmmss").zip"
+$backup_name = "vimbackup_$(Get-Date -Format "yyyyMMdd-hhmmss").zip"
 Write-Host "  --> Compressing backup files into $backup_name ..."
 # tar zcf $backupdir/../$backup_name -C $backupdir/.. vim_backup --remove-files
 Compress-Archive -Path $backupdir -DestinationPath $HOME\$backup_name
@@ -42,7 +42,7 @@ New-Item -Path $vimdir -ItemType Junction -Value $vimedir\rc | Out-Null
 
 Write-Host -ForegroundColor Green "3. Installing Vim-Plug..."
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-New-Item $HOME/vimfiles/autoload/plug.vim -Force | Out-Null
+    New-Item $HOME/vimfiles/autoload/plug.vim -Force | Out-Null
 
 Write-Host -ForegroundColor Green "4. Installing plugins using Vim-Plug..."
 Invoke-Expression "vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir\vime.txt"

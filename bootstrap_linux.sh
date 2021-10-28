@@ -1,25 +1,27 @@
 #!/usr/bin/env bash
 
-e_warn () {
+e_warn() {
   echo -e '\e[41;33;1m'$1'\e[0m'
 }
 
-die () {
+die() {
   e_warn "$1"
   exit 1
 }
 
-e_title () {
+e_title() {
   echo -e '\e[44;33;1m'$1'\e[0m'
 }
 
-e_info () {
+e_info() {
   echo -e '\e[34;1m'$1'\e[0m'
 }
 
-
-cmddir="`dirname $0`"
-export vimedir="`cd $cmddir; pwd`"
+cmddir="$(dirname $0)"
+export vimedir="$(
+  cd $cmddir
+  pwd
+)"
 
 vimrc="$HOME/.vimrc"
 vimdir="$HOME/.vim"
@@ -29,7 +31,6 @@ clear
 cat $vimedir/vime.txt
 
 e_title "Installing vime........"
-
 
 e_info "1. Creating backup for current vim configuration..."
 if [ ! -x "$backupdir" ]; then
@@ -52,7 +53,7 @@ if [ -x "$vimdir" ]; then
   rm -rf $vimdir
 fi
 
-backup_name=vimbackup_`date '+%Y-%m-%d-%H%M%S'`.tar.gz
+backup_name=vimbackup_$(date '+%Y-%m-%d-%H%M%S').tar.gz
 echo "Compressing backup files into $backup_name ..."
 tar zcf $backupdir/../$backup_name -C $backupdir/.. vim_backup --remove-files
 
@@ -65,9 +66,9 @@ ln -s $vimedir/rc $vimdir/
 
 e_info "4. Installing Plug..."
 curl -fLo $vimdir/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 e_info "4. Installing plugins using Vundle..."
- vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir/vime.txt
+vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir/vime.txt
 
 e_title "vime has been successfully installed. Let's vimming!"
