@@ -3,8 +3,16 @@
 " =============================================================
 
 " Line Shortcuts {{{
+" Make j and k work the way you expect
 nnoremap j gj
+vnoremap j gj
 nnoremap k gk
+vnoremap k gk
+" 合并两行并删除一个字符
+noremap K Jx
+" Keep the cursorin place while joining lines
+nnoremap J mzJ`z
+
 nnoremap B ^
 nnoremap E $
 nnoremap $ <nop>
@@ -66,11 +74,13 @@ nmap <C-S-Tab>  :tabprevious<cr>
 "nmap <silent> <A-,> < :wincmd <<CR>
 " }}}
 
-
 " Space to toggle and create folds.
 nnoremap <silent><Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
+" 选中一段文字并全文搜索这段文字
+"vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+"vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 vnoremap * :<C-U>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-U>call <SID>VSetSearch()<CR>??<CR>
 
@@ -80,27 +90,12 @@ nmap Q :x<cr>
 " Use spacebar toggle fold
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
-" 选中一段文字并全文搜索这段文字
-vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-
 " 保存、处理行尾空格和多余空格，并清除高亮
 " map <f3> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
 " nmap b :<C-U>call BufPos_ActivateBuffer(v:count)<CR>
 
-
 map <F4> :w<CR>:call CleanupBuffer(1)<CR>:noh<CR>
 
-" Make j and k work the way you expect
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-" 合并两行并删除一个字符
-noremap K Jx
-" Keep the cursorin place while joining lines
-nnoremap J mzJ`z
 
 " Same when jumping around
 nnoremap g; g;zz

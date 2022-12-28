@@ -90,7 +90,6 @@ set formatoptions+=trnlj
 " set formatoptions-=t
 set textwidth=80
 
-
 " context while scrolling
 set scrolljump=5 " Lines to scroll when cursor leaves screen
 set scrolloff=3 " Minimum lines to keep above and below cursor
@@ -128,7 +127,7 @@ set diffopt+=vertical
 if has('cursorbind') && &diff
   set cursorbind
 end
-"}}}
+" }}}
 
 " don't duplicate an existing open buffer
 set switchbuf=useopen
@@ -146,11 +145,11 @@ set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servernam
 
 " Set gVim UI setting
 if has('gui_running')
-  " set guioptions=mcr         " 只显示菜单
+  " set guioptions=mcr        " 只显示菜单
   set guioptions-=T           " 隐藏工具栏
   " set guioptions-=m         " 隐藏菜单栏
-  set guioptions-=r         " 删除右边的滚动条
-  set guioptions-=l         " 删除左边的滚动条
+  set guioptions-=r           " 删除右边的滚动条
+  set guioptions-=l           " 删除左边的滚动条
   set guioptions-=R           " 如有垂直分割的窗口，删除右边的滚动条
   set guioptions-=L           " 如有垂直分割的窗口，删除左边的滚动条
 endif
@@ -276,4 +275,3 @@ if has("autocmd")
 endif
 
 " }}}
-

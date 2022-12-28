@@ -31,7 +31,7 @@ if has('gui_running')
 else
   set t_Co=256 " Use 256 colors
   "colorscheme distinguished
-  colorscheme koehler
+  colorscheme evening
 endif
 
 " font setting
@@ -48,10 +48,10 @@ if has('gui_running')
   elseif has('gui_win32') || has('gui_win64')
     "set guifont=Consolas:h11:cANSI
     "set guifont=Inconsolata:h20:cANSI
-    set guifont=Fira_Code_Retina:h13:cANSI
+    "set guifont=JetBrains_Mono_NL:h14:cANSI:qDRAFT
+    set guifont=Cascadia_Code_PL:h14:cANSI:qDRAFT
   endif
 endif
-
 
 " =============================================================
 " AutoCmd
