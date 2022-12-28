@@ -31,14 +31,14 @@ If (Test-Path $vimdir) {
 
 $backup_name = "vimbackup_$(Get-Date -Format "yyyyMMdd-hhmmss").zip"
 Write-Host "  --> Compressing backup files into $backup_name ..."
-# tar zcf $backupdir/../$backup_name -C $backupdir/.. vim_backup --remove-files
 Compress-Archive -Path $backupdir -DestinationPath $HOME\$backup_name
 Remove-Item $backupdir -Recurse -Force | Out-Null
 
 Write-Host -ForegroundColor Green "2. Creating soft links of vime..."
 New-Item -ItemType Directory -Force -Path $vimdir  | Out-Null
-New-Item -Path $vimrc -ItemType SymbolicLink -Value $vimedir\vimrc -Force | Out-Null
 New-Item -Path $vimdir -ItemType Junction -Value $vimedir\rc | Out-Null
+# New-Item -Path $vimrc -ItemType SymbolicLink -Value $vimedir\vimrc -Force | Out-Null
+Copy-Item $vimedir\vimrc -Destination $vimrc -Force
 
 Write-Host -ForegroundColor Green "3. Installing Vim-Plug..."
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`

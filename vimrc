@@ -48,8 +48,7 @@ if has('gui_running')
   elseif has('gui_win32') || has('gui_win64')
     "set guifont=Consolas:h11:cANSI
     "set guifont=Inconsolata:h20:cANSI
-    "set guifont=JetBrains_Mono_NL:h14:cANSI:qDRAFT
-    set guifont=UbuntuMono_NFM:h14:cANSI:qDRAFT
+    set guifont=SauceCodePro_NFM:h14:cANSI:qDRAFT
   endif
 endif
 
