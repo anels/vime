@@ -49,7 +49,7 @@ if has('gui_running')
     "set guifont=Consolas:h11:cANSI
     "set guifont=Inconsolata:h20:cANSI
     "set guifont=JetBrains_Mono_NL:h14:cANSI:qDRAFT
-    set guifont=Cascadia_Code_PL:h14:cANSI:qDRAFT
+    set guifont=UbuntuMono_NFM:h14:cANSI:qDRAFT
   endif
 endif
 
