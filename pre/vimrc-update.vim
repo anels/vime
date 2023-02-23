@@ -3,7 +3,6 @@
 "             .vimrc of vime
 "
 "         Author: Anels<anelsliu@gmail.com>
-"        Website: http://ruilinliu.com/
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

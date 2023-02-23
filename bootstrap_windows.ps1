@@ -3,7 +3,7 @@
 $vimedir = $PWD
 
 $vimrc = "$HOME\_vimrc"
-$vimdir = "$HOME\_vim"
+$vimdir = "$HOME\vime"
 $backupdir = "$HOME\vim_backup"
 
 Clear-Host
@@ -13,16 +13,6 @@ Write-Host -ForegroundColor Green "Installing vime........"
 
 Write-Host -ForegroundColor Green "1. Creating backup for current vim configuration..."
 New-Item -ItemType Directory -Force -Path $backupdir | Out-Null
-
-# if [ -f "$vimrc" ]; then
-#   echo "Backing up $vimrc ..."
-#   cp $vimrc $backupdir
-#   rm $vimrc
-#   if [ -f "$vimrc.local" ]; then
-#     cp $vimrc.local $backupdir
-#     rm $vimrc.local
-#   fi
-# fi
 
 If (Test-Path $vimdir) {
     Copy-Item $vimdir $backupdir\vimdir -Recurse -Force | Out-Null
@@ -36,9 +26,10 @@ Remove-Item $backupdir -Recurse -Force | Out-Null
 
 Write-Host -ForegroundColor Green "2. Creating soft links of vime..."
 New-Item -ItemType Directory -Force -Path $vimdir  | Out-Null
-New-Item -Path $vimdir -ItemType Junction -Value $vimedir\rc | Out-Null
-# New-Item -Path $vimrc -ItemType SymbolicLink -Value $vimedir\vimrc -Force | Out-Null
-Copy-Item $vimedir\vimrc -Destination $vimrc -Force
+New-Item -Path $vimdir\rc -ItemType Junction -Value $vimedir\rc | Out-Null
+New-Item -Path $vimdir\vimrc -ItemType SymbolicLink -Value $vimedir\vimrc -Force | Out-Null
+# Copy-Item $vimedir\vimrc -Destination $vimrc -Force
+"source $vimdir\vimrc" | Out-File -FilePath $vimrc
 
 Write-Host -ForegroundColor Green "3. Installing Vim-Plug..."
 Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
