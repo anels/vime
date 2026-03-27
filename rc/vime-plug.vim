@@ -63,13 +63,20 @@ au Syntax * RainbowParenthesesLoadBraces
 Plug 'itchyny/lightline.vim'
 " {{{ lightline settings
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'everforest',
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
+      \   'gitbranch': 'FugitiveHead',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype'
       \ },
       \ }
 " }}}
@@ -116,7 +123,6 @@ endfunction
 
 " Code quality and formatting {{{3
 " Syntax checking
-" Syntax checking using ALE is done below (dense-analysis/ale)
 
 " Text alignment
 Plug 'godlygeek/tabular'
@@ -138,14 +144,11 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 " Code commenting
 Plug 'scrooloose/nerdcommenter'
 
-" Code linting
-Plug 'dense-analysis/ale'
-
 " Python indentation
 Plug 'tweekmonster/braceless.vim'
 
 " Auto-pairing
-Plug 'Raimondi/delimitMate'
+Plug 'LunarWatcher/auto-pairs'
 Plug 'tpope/vim-surround'
 " }}}
 

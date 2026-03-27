@@ -69,6 +69,9 @@ curl -fLo $vimdir/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 e_info "4. Installing plugins using vim-plug..."
+if ! command -v node >/dev/null 2>&1; then
+  e_warn "Warning: Node.js is not installed. coc.nvim requires Node.js to provide autocomplete and LSP features."
+fi
 vim -u $vimedir/pre/vimrc-update.vim +mapclear +PlugInstall! +PlugClean! +qall! $vimedir/vime.txt
 
 e_title "vime has been successfully installed. Let's vimming!"

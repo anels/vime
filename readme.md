@@ -86,7 +86,6 @@ Most of the customization files are in <code>rc</code>
   * Exit: <code>q</code>
 
 #### Coding
-* [ALE](https://github.com/dense-analysis/ale) - Asynchronous Lint Engine
 * [vim-surround](https://github.com/tpope/vim-surround) - Quoting/parenthesizing made simple
 * [NERD_commenter](https://github.com/scrooloose/nerdcommenter) - Provide many different commenting operations and styles
 * [Indent Guides](https://github.com/mutewinter/vim-indent-guides) - Display vertical lines to visualize levels
@@ -116,13 +115,13 @@ Most of the vime customized shortkeys are defined in <code>$HOME/.vim/rc/vime-sh
 <code>&lt;Leader&gt;</code> is mapped to <code>,</code>
 
 ### Fast Settings
-* `<leader>ee' : View/Edit .vimrc
-* `<leader>rc' : Source .vimrc (reload all the configurations)
-* `<Leader>eb' : View/Edit vime-bundle.vim
-* `<Leader>eg' : View/Edit vime-general.vim
-* `<Leader>es' : View/Edit vime-shortcut.vim
-* `<Leader>ef' : View/Edit vime-function.vim
-* `<Leader>ea' : List all configuration files
+* `<leader>ee` : View/Edit .vimrc
+* `<leader>sv` : Source .vimrc (reload all the configurations)
+* `<Leader>ep` : View/Edit vime-plug.vim
+* `<Leader>eg` : View/Edit vime-general.vim
+* `<Leader>es` : View/Edit vime-shortcut.vim
+* `<Leader>ef` : View/Edit vime-function.vim
+* `<Leader>ea` : List all configuration files
 
 #### Normal Mode
 * Tab switch:

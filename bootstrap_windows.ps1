@@ -60,6 +60,11 @@ try {
 }
 
 Write-Host -ForegroundColor Green "4. Installing plugins using Vim-Plug..."
+
+if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
+    Write-Host -ForegroundColor Yellow "Warning: Node.js is not installed. coc.nvim requires Node.js to provide autocomplete and LSP features."
+}
+
 try {
     $vimrcUpdate = Join-Path $sourcedir "pre/vimrc-update.vim"
     $vimeTxt = Join-Path $sourcedir "vime.txt"

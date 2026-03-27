@@ -10,7 +10,7 @@
 
 set nocompatible " Get out of VI's compatible mode
 
-let $VIMEDIR = $HOME.'/vime'
+let $VIMEDIR = expand('<sfile>:p:h')
 let $VIMFILES = $HOME.'/vimfiles'
 
 " {{{ Vime Configuration
